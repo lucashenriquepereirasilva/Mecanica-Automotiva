@@ -1,0 +1,28 @@
+{
+  "name": "mecanica",
+  "version": "1.0.0",
+  "description": "Desenvolvimento de um sistema desktop para uma gestão de ordem de serviços",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lucashenriquepereirasilva/Mecanica-Automotiva"
+  },
+  "author": "lucas henrique",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lucashenriquepereirasilva/Mecanica-Automotiva/issues"
+  },
+  "homepage": "https://github.com/lucashenriquepereirasilva/Mecanica-Automotiva/blob/main/README.md",
+  "devDependencies": {
+    "electron": "^34.2.0"
+  },
+  "dependencies": {
+    "electron-prompt": "^1.7.0",
+    "jspdf": "^3.0.1",
+    "mongoose": "^8.15.0"
+  }
+}

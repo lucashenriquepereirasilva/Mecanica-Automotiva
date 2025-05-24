@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Titulo que sera exibido na janela-->
+    <title>Mecanica Automotiva</title>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
+    <!-- CSS Personalizado -->
+    <link rel="stylesheet" href="../public/css/style.css">
+    <!-- Impedir a execução de scripts externos ou não autorizados -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'">
+</head>
+
+<body>
+
+    <div class="container button">
+        <img src="../public/img/cliente.png" alt="clientes" title="Cadastro de Clientes" onclick="client()">
+        <img src="../public/img/servico-de-gerenciamento.png" alt="relatorios" title="Emissão de OS" onclick="os()">
+        <img src="../public/img/chat.png" alt="logo" id="logo1">
+    </div>
+    <footer>
+        <p id="dataAtualp"></p>
+        <img src="../public/img/dboff.png" alt="dbicon" class="db" id="statusdb">
+    </footer>
+
+
+    <!-- Bootstrap -->
+    <script src="../public/js/bootstrap.min.js"></script>
+    <!-- Scripts -->
+    <script src="../public/js/script.js"></script>
+    <!-- Renderizador -->
+    <script src="renderer.js"></script>
+
+</body>
+
+</html>

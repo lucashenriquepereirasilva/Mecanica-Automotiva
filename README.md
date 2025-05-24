@@ -1,8 +1,8 @@
-![GitHub License](https://img.shields.io/github/license/losc4r/EsteticaAutoMotiva)
+![GitHub License](https://img.shields.io/github/license/lucashenriquepereirasilva/Mecanica-automotiva)
 
 
-# EsteticaAutoMotiva
+# Mecanica Automotiva
 Desenvolvimento de um sistema desktop para uma gestão de ordem de serviços
 
 ## Autor
-Carlos Antonio
+Lucas henrique

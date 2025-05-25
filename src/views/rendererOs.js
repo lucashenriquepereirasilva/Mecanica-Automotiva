@@ -101,9 +101,9 @@ let idos = document.getElementById("inputNumeroOS")
 let nome = document.getElementById("inputNameClient")
 let cpf = document.getElementById("inputCPFClient")
 let telefone = document.getElementById("inputIPhoneClient")
-let marca = document.getElementById("inputMarcaVeiculoOS");
-let modelo = document.getElementById("inputModeloVeiculoOS");
-let placa = document.getElementById("inputPlacaVeiculoOS");
+let motor = document.getElementById("inputTipoMotorOS");
+let combustivel = document.getElementById("inputCombustivelOS");
+let ploblemas = document.getElementById("inputProblemasOS");
 let prazo = document.getElementById("inputPrazoOS");
 let funcionario = document.getElementById("inputFuncionarioOS")
 let stats = document.getElementById("inputosStatus");
@@ -131,7 +131,7 @@ frmOS.addEventListener('submit', async (event) => {
         api.validateClient()
     } else {
         // Teste importante (recebimento dos dados do formuláro - passo 1 do fluxo)
-        console.log(os.value, idClient.value, nome.value, cpf.value, telefone.value, marca.value, modelo.value, placa.value, prazo.value, funcionario.value, stats.value, servico.value, observacoes.value, valor.value)
+        console.log(os.value, idClient.value, nome.value, cpf.value, telefone.value, motor.value, combustivel.value, ploblemas.value, prazo.value, funcionario.value, stats.value, servico.value, observacoes.value, valor.value)
         if (os.value === "") {
             //Gerar OS
             //Criar um objeto para armazenar os dados da OS antes de enviar ao main
@@ -140,9 +140,9 @@ frmOS.addEventListener('submit', async (event) => {
                 nome_OS: nome.value,
                 cpf_OS: cpf.value,
                 telefone_OS: telefone.value,
-                marca_OS: marca.value,
-                modelo_OS: modelo.value,
-                placa_OS: placa.value,
+                tipomotor_OS: motor.value,
+                combustivel_OS: combustivel.value,
+                ploblemas_OS: ploblemas.value,
                 prazo_OS: prazo.value,
                 funcionario_OS: funcionario.value,
                 stats_OS: stats.value,
@@ -192,7 +192,7 @@ api.renderOS((event, dataOS) => {
     nome.value = os.nome
     cpf.value = os.cpf
     telefone.value = os.telefone
-    marca.value = os.marca
+    marca.value = os.motor
     modelo.value = os.modelo
     placa.value = os.placa
     prazo.value = os.prazo

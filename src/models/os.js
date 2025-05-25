@@ -30,13 +30,13 @@ const osSchema = new Schema({
         type: String
     },
     
-    marca: {
+    motor: {
         type: String
     },
-    modelo: {
+    combustivel: {
         type: String
     },
-    placa: {
+    ploblemas: {
         type: String
     },
     prazo: {

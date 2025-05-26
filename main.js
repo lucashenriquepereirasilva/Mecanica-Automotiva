@@ -592,7 +592,7 @@ async function relatorioOSAbertas() {
         y += 10
       }
     
-      doc.text(c.modelo || "N/A", 14, y)
+      doc.text(c.motor|| "N/A", 14, y)
       doc.text(c.funcionario || "N/A", 70, y)
       doc.text(c.servico || "N/A", 120, y)
       doc.text(c.prazo || "N/A", 165, y)
@@ -663,7 +663,7 @@ async function relatorioOSAndamento() {
         y += 10
       }
     
-      doc.text(c.modelo || "N/A", 14, y)
+      doc.text(c.motor || "N/A", 14, y)
       doc.text(c.funcionario || "N/A", 70, y)
       doc.text(c.servico || "N/A", 120, y)
       doc.text(c.prazo || "N/A", 165, y)
@@ -734,7 +734,7 @@ async function relatorioOSFinalizadas() {
         y += 10
       }
     
-      doc.text(c.modelo || "N/A", 14, y)
+      doc.text(c.motor || "N/A", 14, y)
       doc.text(c.funcionario || "N/A", 70, y)
       doc.text(c.servico || "N/A", 120, y)
       doc.text(c.prazo || "N/A", 165, y)
@@ -805,7 +805,7 @@ async function relatorioOSCanceladas() {
         y += 10
       }
     
-      doc.text(c.modelo || "N/A", 14, y)
+      doc.text(c.motor || "N/A", 14, y)
       doc.text(c.funcionario || "N/A", 70, y)
       doc.text(c.servico || "N/A", 120, y)
       doc.text(c.prazo || "N/A", 165, y)
@@ -969,5 +969,69 @@ ipcMain.on('search-os', (event) => {
 })
 
 
+
+
+
+
 // == Fim - Buscar OS =========================================
 // ============================================================
+
+
+// ======================= IMPRIMIR OS ========================
+
+ipcMain.on('print-os', (event) => {
+  //console.log("teste: busca OS")
+  prompt({
+    title: 'Imprimir OS',
+    label: 'Digite o número da OS:',
+    inputAttrs: {
+      type: 'text'
+    },
+    type: 'input',
+    width: 400,
+    height: 200
+  }).then(async (result) => {
+    if (result !== null) {
+
+      //buscar a os no banco pesquisando pelo valor do result (número da OS)
+      if (mongoose.Types.ObjectId.isValid(result)) {
+        try {
+          // teste para ver se está funcionando
+          //console.log ("Lucas Doente")
+          const dataOS = await osModel.findById(result)
+          if (dataOS) {
+            console.log(dataOS) // teste importante
+
+            // extrair os dados do cliente
+            const dataClient = await clientModel.find({
+              _id: dataOS.idCliente                
+            })
+            console.log(dataClient) 
+            
+            // impressão (documento PDF) com os dados da Os, do cliente e termos do serviço (uso do jspdf)
+          } else {
+            dialog.showMessageBox({
+              type: 'warning',
+              title: "Aviso!",
+              message: "OS não encontrada",
+              buttons: ['OK']
+            })
+          }
+        } catch (error) {
+          console.log(error)
+        }
+      } else {
+        dialog.showMessageBox({
+          type: 'error',
+          title: "Atenção!",
+          message: "Formato do número da OS inválido.\nVerifique e tente novamente.",
+          buttons: ['OK']
+        })
+      }
+    }
+  })
+})
+
+
+// ======================= Fim - IMPRIMIR OS ====================
+// ==============================================================

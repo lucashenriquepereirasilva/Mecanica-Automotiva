@@ -192,9 +192,9 @@ api.renderOS((event, dataOS) => {
     nome.value = os.nome
     cpf.value = os.cpf
     telefone.value = os.telefone
-    marca.value = os.motor
-    modelo.value = os.modelo
-    placa.value = os.placa
+    motor.value = os.motor
+    combustivel.value = os.combustivel
+    ploblemas.value = os.placa
     prazo.value = os.prazo
     funcionario.value = os.funcionario
     stats.value = os.stats
@@ -246,3 +246,16 @@ frmOS.addEventListener('keydown', teclaEnter)
 
 // Fim manipulação Tecla Enter
 // =========================
+
+
+// == imprimir os =================================
+
+function generateOS(){
+    api.PrintOS()
+}
+
+
+
+
+
+// ==  fim imprimir os ====================

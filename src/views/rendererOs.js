@@ -155,6 +155,27 @@ frmOS.addEventListener('submit', async (event) => {
             api.newOs(os)
         } else {
             //Editar OS
+            const os = {
+                id_OS: idOS.value,
+                idClientOS: idClient.value,
+                nome_OS: nome.value,
+                cpf_OS: cpf.value,
+                telefone_OS: telefone.value,
+               motor_OS: motor.value,
+                combustivel_OS: modelo.value,
+               ploblemas_OS: placa.value,
+                prazo_OS: prazo.value,
+                funcionario_OS: funcionario.value,
+                stats_OS: stats.value,
+                servico_OS: servico.value,
+                observacoes_OS: observacoes.value,
+                valor_OS: valor.value,
+            }
+            // Enviar ao main o objeto os - (Passo 2: fluxo)
+            // uso do preload.js
+            api.updateOS(os)
+
+            
 
         }
     }
@@ -194,7 +215,7 @@ api.renderOS((event, dataOS) => {
     telefone.value = os.telefone
     motor.value = os.motor
     combustivel.value = os.combustivel
-    ploblemas.value = os.placa
+    ploblemas.value = os.ploblemas
     prazo.value = os.prazo
     funcionario.value = os.funcionario
     stats.value = os.stats
@@ -223,7 +244,10 @@ api.resetForm((args) => {
 
 // == Fim - reset form ========================================
 // ============================================================
-
+function removeOS() {
+    console.log(idos.value) // Passo 1 (receber do form o id da OS)
+    api.deleteOS(idos.value) // Passo 2 (enviar o id da OS ao main)
+}
 // =======================
 // Manipulação da tecla Enter
 
@@ -253,6 +277,8 @@ frmOS.addEventListener('keydown', teclaEnter)
 function generateOS(){
     api.PrintOS()
 }
+
+
 
 
 

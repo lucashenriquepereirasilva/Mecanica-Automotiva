@@ -17,6 +17,9 @@ function os() {
     api.osWindow()
 }
 
+
+
+
 // troca do icone do banco de dados (usando a api do preload.js)
 api.dbStatus((event, message) => {
     // teste do recebimento da mensagem

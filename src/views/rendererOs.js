@@ -156,14 +156,14 @@ frmOS.addEventListener('submit', async (event) => {
         } else {
             //Editar OS
             const os = {
-                id_OS: idOS.value,
+                id_OS: idos.value,
                 idClientOS: idClient.value,
                 nome_OS: nome.value,
                 cpf_OS: cpf.value,
                 telefone_OS: telefone.value,
                motor_OS: motor.value,
-                combustivel_OS: modelo.value,
-               ploblemas_OS: placa.value,
+                combustivel_OS: combustivel.value,
+               ploblemas_OS: ploblemas.value,
                 prazo_OS: prazo.value,
                 funcionario_OS: funcionario.value,
                 stats_OS: stats.value,
@@ -251,19 +251,25 @@ function removeOS() {
 // =======================
 // Manipulação da tecla Enter
 
-// função para manipular o evento da tecla ENTER
+// 1. Defina a função searchOS primeiro
+function searchOS() {
+    console.log("Função searchOS executada.");
+    // Aqui vai a lógica para buscar uma Ordem de Serviço
+}
+
+// 2. Depois defina a função que usa ela (teclaEnter)
 function teclaEnter(event) {
-    // se a tecla Enter for pressionada
     if (event.key === "Enter") {
-        event.preventDefault() // ignorar o comportamento padrão e associar o Enter a busca pelo cliente
-        searchOS()
+        event.preventDefault();
+        searchOS(); // agora funciona, porque a função já foi definida acima
     }
 }
 
-// Função para restaurar o padrão da tecla Enter (submit)
+// 3. Restauração do Enter padrão
 function restaurarEnter() {
-    frmOS.removeEventListener('keydown', teclaEnter)
+    frmOS.removeEventListener('keydown', teclaEnter);
 }
+
 
 // "escuta do evento Tecla Enter"
 frmOS.addEventListener('keydown', teclaEnter)

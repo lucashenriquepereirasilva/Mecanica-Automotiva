@@ -1284,7 +1284,7 @@ ipcMain.on('print-os', async (event) => {
 
             // Modelo
             doc.setFont("helvetica", "bold");
-            doc.text("Modelo:", 14, baseY);
+            doc.text("tipomotor:", 14, baseY);
             doc.setFont("helvetica", "normal");
             doc.text(String(dataOS.tipomotor), 50, baseY);
             baseY += 10;
@@ -1346,7 +1346,7 @@ ipcMain.on('print-os', async (event) => {
   - O cliente declara estar ciente e de acordo com os termos acima.`
 
             // Inserir o termo no PDF
-            doc.text(termo, 14, 150, { maxWidth: 180 }) // x=14, y=60, largura máxima para quebrar o texto automaticamente
+            doc.text(termo, 19, 180, { maxWidth: 180 }) // x=14, y=60, largura máxima para quebrar o texto automaticamente
 
             // Definir o caminho do arquivo temporário e nome do arquivo
             const tempDir = app.getPath('temp')
@@ -1430,7 +1430,7 @@ async function printOS(osId) {
 
     // Modelo
     doc.setFont("helvetica", "bold");
-    doc.text("Modelo:", 14, baseY);
+    doc.text("tipomotor:", 14, baseY);
     doc.setFont("helvetica", "normal");
     doc.text(String(dataOS.tipomotor), 50, baseY);
     baseY += 10;

@@ -1276,7 +1276,7 @@ ipcMain.on('print-os', async (event) => {
             doc.setFont("helvetica", "bold");
             doc.text("motor:", 14, baseY);
             doc.setFont("helvetica", "normal");
-            doc.text(String(dataOS.tipomotor), 50, baseY);
+            doc.text(String(dataOS.motor), 50, baseY);
             baseY += 10;
 
             
@@ -1422,7 +1422,7 @@ async function printOS(osId) {
     doc.setFont("helvetica", "bold");
     doc.text("motor:", 14, baseY);
     doc.setFont("helvetica", "normal");
-    doc.text(String(dataOS.tipomotor), 50, baseY);
+    doc.text(String(dataOS.motor), 50, baseY);
     baseY += 10;
 
     

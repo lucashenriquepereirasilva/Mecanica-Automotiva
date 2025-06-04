@@ -14,6 +14,9 @@ Sistema para gestão de serviços de uma assistência técnica de computadores e
 ### Relatório de clientes
 ![](src/public/img/RelatorioClientes.png)
 
+### Relatório OS Abertas
+![](src/public/img/aberta.png)
+
 ### Relatório OS Finalizadas
 ![](src/public/img/finalizada.png)
 
